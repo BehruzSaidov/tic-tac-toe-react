@@ -102,6 +102,7 @@ export default function Game() {
       }
     });
     setList(updatedArray);
+
     for (var i = 0; i < GAME_COMBINATION.length; i++) {
       const [f, s, t] = GAME_COMBINATION[i];
       if (
@@ -109,8 +110,8 @@ export default function Game() {
         updatedArray[f] === updatedArray[s] &&
         updatedArray[f] === updatedArray[t]
       ) {
-        setMatchIndexs([f, s, t]);
         setClickAble(false);
+        setMatchIndexs([f, s, t]);
 
         var action, title, textColor, htmlElement;
 
@@ -264,7 +265,7 @@ export default function Game() {
         }
       }
 
-      function C() {
+      function C(){
         let positionIndexs = "";
 
         for (var i = 0; i < GAME_COMBINATION.length; i++) {
@@ -314,8 +315,8 @@ export default function Game() {
 
       function T(index) {
         setTimeout(() => {
-          changeCombination(index);
           setClickAble(true);
+          changeCombination(index);
           setCpu_(false);
         }, randomNumber(8, 13) * 100);
       }
@@ -328,7 +329,7 @@ export default function Game() {
       return (
         <Box
           key={index}
-          data={{ match, clickAble, index, item, changeCombination, player }}
+          data={{ match, clickAble, index, item, changeCombination, player , selected ,type}}
         />
       );
     });
