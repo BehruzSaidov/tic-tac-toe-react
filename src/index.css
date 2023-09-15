@@ -30,6 +30,7 @@ button{
 html,body,#root{
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 body{
@@ -38,104 +39,44 @@ body{
 }
 
 
-
-
-.o,.x{
-    position: relative;
+.x,.o,._o:hover,._x:hover{
+    background-size: 64px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* o positon code */
-.o::before, ._o::before, .o::after , ._o::after{
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-}
-
-._o::before,.o::before{
-    width: 64px;
-    height: 64px;
-}
-
-._o::after,.o::after{
-    width: 26.07px;
-    height: 26.07px;
-}
-
-.o:not(.match)::before{
-    background-color: var(--f2b);
-}
-
-.o:not(.match)::after{
-    background-color: var(--1f3);
-    z-index: 1;
-}
-
-.o.match::after{
-    background-color: var(--f2b);
-}
-
-.o.match::before{
-    background-color: var(--1f3);
-}
-
-._o:hover::after,._o:hover::before{
-    background-color: var(--1f3);
-    border: 2px solid var(--f2b);
-}
-
-/* x position code */
-
-.x::after,._x::after,.x::before,._x::before{
-    content: "";
-    position: absolute;
-    width: 64px;
-    height: 18px;
-    border-radius: 2px;
+.o:not(.match){
+    background-image: url('./Resources/svg/o.svg');
 }
 
 
-.x::after,._x::after{
-    transform: rotate(-45deg);
-}
-.x::before,._x::before{
-    transform: rotate(45deg);
+.o.match{
+    background-image: url('./Resources/svg/o_match.svg');
 }
 
-.x:not(.match)::after,.x:not(.match)::before{
-    background-color: var(--31c);
+._o:hover{
+    background-image: url('./Resources/svg/o_hover.svg');
 }
 
-.x.match::after,.x.match::before{
-    background-color: var(--1f3);
+
+.x:not(.match){
+    background-image: url('./Resources/svg/x.svg');
 }
 
-._x:hover::after,._x:hover::before{
-    background-color: var(--1f3);
-    border: 2px solid var(--31c);
+.x.match{
+    background-image: url('./Resources/svg/x_match.svg');
 }
 
-._x:hover > span {
-    position: absolute;
-    width: 60px;
-    height: 14px;
-    transform: rotate(45deg);
-    z-index: 3;
-    align-content: center;
-    background: var(--1f3);
+._x:hover{
+    background-image: url('./Resources/svg/x_hover.svg');
 }
-
 
 
 @media (max-width: 431px){
-    ._o::before,.o::before{
-        width: 40px;
-        height: 40px;
+    .x,.o,._o:hover,._x:hover{
+        background-size: 40px;
     }
     
-    ._o::after,.o::after{
-        width: 16.3px;
-        height: 16.3px;
-    }
 }
 
 
